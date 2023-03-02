@@ -1,0 +1,67 @@
+:host {
+  font-family: 'Open Sans', sans-serif !important;
+
+  .title {
+    h4 {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 30px;
+      color: #101213;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 15px;
+      color: #4F575E;
+    }
+  }
+
+  label {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #040F14;
+  }
+
+  .btn-document-s {
+    position: relative;
+    padding-top: 2em;
+  }
+
+  .document-card {
+    padding: 20px;
+    margin: 2em 0 0 0em;
+    background: #FFF;
+    box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
+    border-radius: 2px;
+
+    h4 {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 15px;
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #889499;
+
+      span.material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        font-size: 2.1em;
+
+        &.task {
+          color: #00C246 !important
+        }
+      }
+    }
+  }
+}
