@@ -24,7 +24,6 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
     SharedModule,
     CoreModule,
     NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
-    MainModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use '@angular/material'as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,28 +19,71 @@ $TesteAilos-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$TesteAilos-theme: mat.define-light-theme(( color: ( primary: $TesteAilos-primary, accent: $TesteAilos-accent, warn: $TesteAilos-warn, ) ));
+$TesteAilos-theme: mat.define-light-theme((color: (primary: $TesteAilos-primary, accent: $TesteAilos-accent, warn: $TesteAilos-warn, )));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($TesteAilos-theme);
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import "node_modules/bootstrap/scss/bootstrap.scss";
 
 :root {
+  --bs-primary: #165C7D !important;
+  --bs-secondary: #0e4058 !important;
+  --bs-font-sans-serif: Open Sans;
   --primary: #165C7D;
   --bg-color: #E7EEF1;
   --text-primary: #101213;
   --text-secondary: #4F575E;
 }
 
-html, body {
+$border-radius: 2px;
+$theme-colors: ("primary": #165C7D, "secondary": #0e4058);
+$custom-colors: ("bs-secondary": #0e4058, "bg-color": #E7EEF1, "text-primary": #101213, "text-secondary": #4F575E);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+html,
+body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: var(---bg-color);
+  font-family: Open Sans, "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color) !important;
+}
+
+mat-form-field {
+  background: #FFF !important;
+}
+
+mat-step-header mat-step-icon mat-step-icon-content span {
+  display: none !important;
+}
+
+mat-stepper.stepper-menu {
+  background-color: #4e2a00 !important;
+
+  mat-step-header.mat-step-header {
+    flex-direction: column;
+  }
+
+  .mat-step-icon {
+    background-color: #C6CED1;
+
+    &.mat-step-icon-selected {
+      background-color: var(--bg-color);
+      border: 2px solid #165C7D;
+      margin-bottom: 1em;
+    }
+
+    .mat-step-icon-content {
+      display: none !important;
+    }
+  }
 }

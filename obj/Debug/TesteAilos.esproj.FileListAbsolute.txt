@@ -1,0 +1,2 @@
+C:\Code\Gft\TesteAilos\obj\Debug\TesteAilos.esproj.SuggestedBindingRedirects.cache
+C:\Code\Gft\TesteAilos\obj\Debug\TesteAilos.esproj.CoreCompileInputs.cache
