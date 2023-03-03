@@ -58,6 +58,16 @@ body {
   background-color: var(--bg-color) !important;
 }
 
+
+input, button.btn {
+  border-radius: 0px !important;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
 mat-form-field {
   background: #FFF !important;
 }
