@@ -6,7 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Input() sidenav: any;
   @Input() sidenavIsOpened: boolean = true;
+  @Input() pageTitle: string = "Nova Admissão Cooperado";
   @Input() breadcumbList: any[] = [
     {
       name: 'Home',
@@ -14,7 +16,6 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  pageTitle: string = "Nova Admissão Cooperado";
 
 
   hidenNotificationCount: boolean = true;

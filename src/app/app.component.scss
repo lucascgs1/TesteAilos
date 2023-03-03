@@ -1,20 +1,9 @@
-.example-container {
-  /*  width: 100vw;*/
+.sidenav-container {
   height: 100vh;
   border: none;
 }
 
-
-
-
-
-mat-drawer-container {
-  background-color: var(--bg-color) !important;
-
-  mat-drawer.example-sidenav {
-    background-color: var(--primary);
-    color: #fff;
-    width: 100px;
-  }
+mat-sidenav.mat-sidenav {
+  background-color: var(--primary) !important;
+  color: #fff !important;
 }
-

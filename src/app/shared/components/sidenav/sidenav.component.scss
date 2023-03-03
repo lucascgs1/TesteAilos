@@ -1,17 +1,74 @@
-.sidenav-container {
-  height: 100%;
-}
+:host {
+  .sidenav_container {
+    min-width: 60px;
+    height: 100%;
+    background-color: var(--primary) !important;
+    color: #fff !important;
 
-.sidenav {
-  width: 200px;
-}
+    mat-list {
+      mat-list-item.mat-mdc-list-item {
+        margin: 12px 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        cursor: pointer;
+        border-bottom: 1px solid #ffffff12;
+        height: 71px !important;
 
-.sidenav .mat-toolbar {
-  background: inherit;
-}
+        &:hover {
+          mat-icon, .mdc-list-item__primary-text {
+            color: #d9d8d8 !important
+          }
+        }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+        mat-icon {
+          color: #fff !important;
+          font-size: 2em;
+          height: 100%;
+          margin: 0px 0px;
+          display: flex;
+          width: 94px;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+        }
+
+        .mdc-list-item__primary-text {
+          font-size: 1.25em !important;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: #fff !important;
+        }
+
+        &.ailos-icon {
+          height: 167px !important;
+
+
+          ::ng-deep span.mdc-list-item__content {
+            height: 100%;
+
+            .mat-mdc-list-item-unscoped-content .icon {
+              background-image: url(../../../../assets/png/Icone_App_App-Ailos.png);
+              background-size: contain;
+              height: 100%;
+              width: 100%;
+              padding: 0 31px;
+              background-repeat: no-repeat;
+              margin: -8px 0;
+              background-position: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
 }
