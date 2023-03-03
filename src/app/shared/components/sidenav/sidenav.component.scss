@@ -17,6 +17,8 @@
         text-align: center;
         justify-content: center;
         cursor: pointer;
+        border-bottom: 1px solid #ffffff12;
+        height: 71px !important;
 
         &:hover {
           mat-icon, .mdc-list-item__primary-text {
@@ -44,7 +46,8 @@
         }
 
         &.ailos-icon {
-          height: 109px !important;
+          height: 167px !important;
+
 
           ::ng-deep span.mdc-list-item__content {
             height: 100%;
