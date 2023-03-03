@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Register } from '../../../core/models/register';
 import { UserService } from '../../../core/services/user.service';
 import { DocumentValidator } from '../../../shared/helper/cpf-validator.component';
 
@@ -11,7 +12,7 @@ import { DocumentValidator } from '../../../shared/helper/cpf-validator.componen
 export class InitComponent implements OnInit {
   public document = new FormControl('');
   public isSubmited = false;
-
+  public RegisterlStatus: Register | undefined;
   public documentForm: FormGroup = this.formBuilder.group({
     document: ['', [Validators.required, Validators.pattern(DocumentValidator.documentRegex)]],
   });
@@ -31,9 +32,9 @@ export class InitComponent implements OnInit {
   onSubmit(): void {
     this.isSubmited = true;
     console.log(this.documentForm);
-    this.userService.getCadastralStatus(this.documentForm.controls['document'].value)
+    this.userService.getRegisterlStatus(this.documentForm.controls['document'].value)
       .subscribe(res => {
-        console.log(res);
+        this.RegisterlStatus = res;
       });
   }
 

@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { SidenavService } from './core/services/sidenav.service';
 
 @Component({
   selector: 'app-root',
@@ -49,14 +50,23 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  constructor() {
+
+  //test
+  name = 'Angular';
+  public onSideNavChange: boolean = false;
+
+  constructor(private _sidenavService: SidenavService) {
+    this._sidenavService.sideNavState$.subscribe(res => {
+      console.log(res)
+      this.onSideNavChange = res;
+    })
   }
 
   ngOnInit(): void {
   }
 
-  @HostListener('window:resize', ['$event.target.innerWidth'])
-  onResize(width: number) {
-    this.sidenavIsOpened = width >= this.desktopViewWidth;
-  }
+  //@HostListener('window:resize', ['$event.target.innerWidth'])
+  //onResize(width: number) {
+  //  this.sidenavIsOpened = width >= this.desktopViewWidth;
+  //}
 }

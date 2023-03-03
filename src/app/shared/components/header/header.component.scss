@@ -1,7 +1,9 @@
 :host {
   mat-toolbar.header {
     background-color: #fff;
-    color: #fff;
+    color: #101213;
+    padding-top: 11px;
+    padding-bottom: 11px;
 
     .page-title {
       text-transform: uppercase;
@@ -28,11 +30,6 @@
       }
     }
   }
-
-  .example-spacer {
-    flex: 1 1 auto;
-  }
-
 
   .nav-buttons {
     align-items: center;

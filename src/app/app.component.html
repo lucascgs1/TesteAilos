@@ -1,33 +1,18 @@
-<mat-drawer-container class="example-container">
-    menu lateral
-    <mat-drawer #drawer mode="side" class="example-sidenav" [opened]="sidenavIsOpened">
 
-        <div class="row">
-            <div class="col-12">
-                <img src="../assets/ìmg/icon-ailos.png" style="    width: 100%;padding: 0px 20px; margin: 20px 0;cursor: pointer;" />
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #leftSidenav mode="side" [opened]="sidenavIsOpened">
+        <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
+        <div class="main_content">
+            <app-header [sidenav]="leftSidenav" [sidenavIsOpened]="sidenavIsOpened" [breadcumbList]="breadcumbList"> </app-header>
+
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
 
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <mat-list>
-                    <mat-list-item *ngFor="let folder of folders">
-                        <mat-icon matListItemIcon>folder</mat-icon>
-                        <div matListItemTitle>{{folder.name}}</div>
-                    </mat-list-item>
-                    <mat-divider></mat-divider>
-                    <mat-list-item *ngFor="let note of notes">
-                        <mat-icon matListItemIcon>note</mat-icon>
-                        <div matListItemTitle>{{note.name}}</div>
-                    </mat-list-item>
-                </mat-list>
-            </div>
-        </div>
-    </mat-drawer>
-    <mat-drawer-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
-        <app-header [sidenavIsOpened]="sidenavIsOpened" [breadcumbList]="breadcumbList"></app-header>
-        
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container>
+

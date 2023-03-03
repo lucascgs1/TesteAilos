@@ -6,6 +6,7 @@ import { UserService } from './services/user.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SidenavService } from './services/sidenav.service';
 
 @NgModule({
   declarations: [],
@@ -18,6 +19,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
   ],
   providers: [
     UserService,
+    SidenavService
   ]
 })
 
