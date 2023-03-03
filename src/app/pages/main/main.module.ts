@@ -12,10 +12,11 @@ import { SharedModule } from '../../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InitComponent } from './init/init.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [MainComponent, InitComponent, DocumentsComponent, RegisterComponent, AdmissionComponent],
-  imports: [CommonModule, MainRoutingModule, SharedModule,],
+  imports: [CommonModule, MainRoutingModule, SharedModule, NgxMaskModule.forChild()],
   exports: [
     InitComponent, DocumentsComponent, RegisterComponent, AdmissionComponent
   ]

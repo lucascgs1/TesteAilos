@@ -1,44 +1,33 @@
 <mat-drawer-container class="example-container">
     menu lateral
-    <mat-drawer #drawer mode="side" class="example-sidenav" opened>
-        teste
+    <mat-drawer #drawer mode="side" class="example-sidenav" [opened]="sidenavIsOpened">
+
+        <div class="row">
+            <div class="col-12">
+                <img src="../assets/ìmg/icon-ailos.png" style="    width: 100%;padding: 0px 20px; margin: 20px 0;cursor: pointer;" />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-list>
+                    <mat-list-item *ngFor="let folder of folders">
+                        <mat-icon matListItemIcon>folder</mat-icon>
+                        <div matListItemTitle>{{folder.name}}</div>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngFor="let note of notes">
+                        <mat-icon matListItemIcon>note</mat-icon>
+                        <div matListItemTitle>{{note.name}}</div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
     </mat-drawer>
     <mat-drawer-content>
-        <mat-toolbar color="primary" style="height: auto;padding: 11px 0;">
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
-                <mat-icon>menu</mat-icon>
-            </button>
-            <div class="col-8">
-                <h3 style="text-transform: uppercase;color: #101213;font-weight: 700;font-size: 24px;line-height: 32px;">
-                    Nova Admissão Cooperado
-                </h3>
-                <h4 style="font-weight: 400; font-size: 12px;line-height: 18px; color: #787878;">
-                    Cadastro / Admissão do Cooperado / Nova Admissão de Cooperado
-                </h4>
-            </div>
-            <span class="example-spacer"></span>
-            <div class="col-3">
-                <div class="row nav-buttons">
-                    <div class="col-3 alert-icon">
-                        <span class="material-symbols-outlined" matBadge="15" matBadgeColor="warn">
-                            notifications
-                        </span>
-                    </div>
-                    <div class="col-5">
-                        <button type="button" class="btn btn-outline-primary btn-viacredi btn-lg">
-                            VIACREDI
-                        </button>
-                    </div>
-                    <div class="col-4">
-                        <div class="user-icon">
-                            <span class="material-symbols-outlined">
-                                settings
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </mat-toolbar>
+
+        <app-header [sidenavIsOpened]="sidenavIsOpened" [breadcumbList]="breadcumbList"></app-header>
+        
         <router-outlet></router-outlet>
     </mat-drawer-content>
 </mat-drawer-container>

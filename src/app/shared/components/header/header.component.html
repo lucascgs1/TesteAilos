@@ -1,0 +1,59 @@
+<mat-toolbar color="primary" class="header" style="height: auto;padding: 11px 0;">
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu" *ngIf="!sidenavIsOpened">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+        </button>
+    </mat-menu>
+
+    <div class="col-7 col-md-8 ps-md-3 col-lg-8">
+        <h3 class="page-title">
+            {{pageTitle}}
+        </h3>
+        <div class="breadcumb">
+            <span *ngFor="let breadcumb of breadcumbList; index as i">
+                <a *ngIf="breadcumbList.length - 1 != i" [routerLink]=" breadcumb.link">
+                    {{breadcumb.name}}&nbsp;/&nbsp;
+                </a>
+
+                <span *ngIf="breadcumbList.length - 1 == i">
+                    {{breadcumb.name}}
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="col-4 cl-md-3">
+        <div class="row nav-buttons">
+            <div class="col-2 col-md-3 col-lg-3 col-xl-5 alert-icon">
+                <span class="material-symbols-outlined" matBadge="15" matBadgeColor="warn" [matBadgeHidden]="hidenNotificationCount">
+                    notifications
+                </span>
+            </div>
+            <div class="col-6 col-md-5 col-lg-5 col-xl-4">
+                <button type="button" class="btn btn-outline-primary btn-viacredi btn-lg">
+                    VIACREDI
+                </button>
+            </div>
+            <div class="col-4 col-md-3 col-lg-3 col-xl-2">
+                <div class="user-icon">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-toolbar>

@@ -4,14 +4,9 @@
   border: none;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
 
-.mat-toolbar.mat-primary {
-  background-color: #fff;
-  color: #fff;
-}
+
+
 
 mat-drawer-container {
   background-color: var(--bg-color) !important;
@@ -23,59 +18,3 @@ mat-drawer-container {
   }
 }
 
-
-.nav-buttons {
-  align-items: center;
-
-  .alert-icon {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-
-    .material-symbols-outlined {
-      color: var(--bs-primary);
-      font-size: 2.25em;
-      cursor: pointer;
-
-      .mat-badge-content {
-        font-family: "Open Sans", sans-serif !important;
-        font-size: 10px;
-        font-weight: 600;
-        right: -3px;
-        top: 0px;
-        width: 18px;
-        height: 18px;
-        line-height: 19px;
-      }
-    }
-  }
-
-  .btn-viacredi {
-    border-radius: var(--bs-border-radius-pill) !important;
-    font-weight: 700;
-    font-size: 1em;
-  }
-
-  .user-icon {
-    background-image: url(../assets/ìmg/pokebola.jpg);
-    width: 62%;
-    height: 100%;
-    padding-bottom: 58%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-radius: 44px;
-    border: 1px solid var(--primary);
-    cursor: pointer;
-    position: relative;
-
-    .material-symbols-outlined {
-      color: var(--primary);
-      position: absolute;
-      right: -2px;
-      bottom: -5px;
-      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 200, 'opsz' 48;
-      font-size: 1.25em !important;
-    }
-  }
-}

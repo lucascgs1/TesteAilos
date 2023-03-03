@@ -1,24 +1,33 @@
+<form [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+    <div class="row mb-2">
+        <div class="col-12 mb-2 title">
+            <h4>
+                Informe o CPF do futuro cooperado (a)
+            </h4>
+            <h5>
+                Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.
+                Digite apenas os números (sem pontos ou traços).
+            </h5>
+        </div>
 
-<div class="row mb-2">
-    <div class="col-12 mb-2 title">
-        <h4>
-            Informe o CPF do futuro cooperado (a)
-        </h4>
-        <h5>
-            Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este cadastro futuramente.
-            Digite apenas os números (sem pontos ou traços).
-        </h5>
-    </div>
+        <div class="col-12 col-md-4 col-lg-3 col-xl-3">
+            <label for="document" class="form-label">CPF</label>
+            <input class="form-control"
+                   id="document" formControlName="document"
+                   placeholder="000.000.000-00"
+                   mask="000.000.000-00" [ngClass]="{'is-invalid': !documentForm.controls['document'].pristine && ((documentForm.controls['document'].touched || isSubmited) && (documentForm.controls['document'].value == '' || documentForm.controls['document'].value.length < 11))}">
+            <div *ngIf="(documentForm.controls['document'].touched || isSubmited) && documentForm.controls['document'].value == ''" class="invalid-feedback">
+                <span *ngIf="documentForm.controls['document'].errors !== null && ( documentForm.controls['document'].errors?.['required'] || documentForm.value.document.length < 14)">
+                    cnpj é obrigatório
+                </span>
+            </div>
+        </div>
 
-    <div class="col-12 col-md-4 col-lg-3 col-xl-3">
-        <label for="document" class="form-label">CPF</label>
-        <input type="email" class="form-control" id="document" placeholder="000.000.000-00">
+        <div class="col-12 col-md-3 col-lg-3 col-xl-2 d-grid gap-2 btn-document-s">
+            <button type="submit" class="btn btn-primary btn-block">Consultar por CPF</button>
+        </div>
     </div>
-
-    <div class="col-12 col-md-3 col-lg-3 col-xl-2 d-grid gap-2 btn-document-s">
-        <button type="button" class="btn btn-primary btn-block">Consultar por CPF</button>
-    </div>
-</div>
+</form>
 
 <div class="row">
     <div class="col-12 col-md-4 col-lg-3 col-xl-3">

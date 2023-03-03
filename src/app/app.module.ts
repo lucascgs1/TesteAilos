@@ -13,6 +13,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 
+const maskConfig: Partial<IConfig> = {
+};
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,9 +26,10 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
     BrowserAnimationsModule,
     SharedModule,
     CoreModule,
-    NgxMaskModule.forRoot({ dropSpecialCharacters: false }),
+    NgxMaskModule.forRoot(maskConfig),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
